@@ -1,7 +1,13 @@
+import NotificationButton from "./components/NotificationButton"
+
 function App() {
 
   return (
-    <h1>Ds Meta</h1>
+    <>
+      <h1>Ds Meta</h1>
+      <NotificationButton></NotificationButton>
+    </>
+
   )
 }
 
