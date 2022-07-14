@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.stereotype.Service
 import java.time.LocalDate
+import java.util.UUID
 
 @Service
 class SalesService(
@@ -20,5 +21,9 @@ class SalesService(
     fun findSales(minDate: LocalDate, maxDate: LocalDate, page: Pageable): Page<Sale> {
         loggingService.logInfo(logger, "get all sales")
         return salesRepository.findSales(minDate, maxDate, page)
+    }
+
+    fun findSale(uuid: UUID): Sale {
+        return salesRepository.getReferenceById(uuid)
     }
 }
