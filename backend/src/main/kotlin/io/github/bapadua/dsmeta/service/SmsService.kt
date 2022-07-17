@@ -34,6 +34,7 @@ class SmsService(
             loggingService.logInfo(logger, "message sent to ${twilioPhoneTo}: sid: ${result.sid}")
         } else
             loggingService.logInfo(logger, "fake message sent to $twilioPhoneTo")
+            loggingService.logInfo(logger, "message: \n $message")
 
     }
 
