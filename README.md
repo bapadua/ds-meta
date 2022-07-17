@@ -11,7 +11,7 @@
 Serviço de notificação de vendas via sms, utilizando springboot para o backend
 e react com typescript para o frontend... 
 
-Minha versão fiz algumas motificações, utilizando o kotlin para o backend, adicionei uma variavel para 
+Minha versão fiz algumas motificações, utilizando o kotlin para o backend, adicionei uma variavel[TWILIO_ACTIVE] para 
 desativar o twilio para que terceiros não façam spam e gastem os créditos do trial.
 Também adicionei uma verificação da build no travis-ci.com.
 
