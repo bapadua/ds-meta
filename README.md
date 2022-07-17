@@ -11,11 +11,19 @@
 Serviço de notificação de vendas via sms, utilizando springboot para o backend
 e react com typescript para o frontend... 
 
-Minha versão fiz algumas motificações, utilizando o kotlin para o backend, adicionei uma variavel[TWILIO_ACTIVE] para 
-desativar o twilio para que terceiros não façam spam e gastem os créditos do trial.
-Também adicionei uma verificação da build no travis-ci.com.
+Minha versão fiz algumas motificações, utilizando o kotlin para o backend, alterei o tipo do id para UUID(GUID), adicionei uma variavel **TWILIO_ACTIVE]** para 
+desativar o twilio para que terceiros **não façam spam e gastem os créditos do trial**, deixando apenas um log da mensagem enviada no console, para ver via cmd
+**heroku logs --tail -a nome-do-seu-app**:
+<img src='https://user-images.githubusercontent.com/3621327/179404968-8fff2ffa-d8e0-436c-a4fd-9e3fb8c32e3e.png'>
 
-Canal do professor Nélio Alves no youtube - https://www.youtube.com/c/DevSuperior
+**twilio ativo**:
+
+<img src='https://user-images.githubusercontent.com/3621327/179405001-4fefde3e-ab6f-4898-a8b9-d1ea0d833987.png' width='200' height='450'>
+
+Também adicionei uma verificação da build no **travis-ci.com**, e criei mocks novos no **mockaroo** (https://www.mockaroo.com/)
+
+
+Canal do professor **Nélio Alves no youtube** - https://www.youtube.com/c/DevSuperior
 
 Site https://devsuperior.com.br
 
@@ -41,5 +49,4 @@ heroku git:remote -a <nome-do-app>
   
 git remote -v
   
-  
-git subtree push --prefix backend heroku main <----
+**git subtree push --prefix backend heroku main**
