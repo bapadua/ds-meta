@@ -4,7 +4,8 @@
 [![Build Status](https://app.travis-ci.com/bapadua/ds-meta.svg?branch=main)](https://travis-ci.org/bapadua/ds-meta)
 ![Skills](https://img.shields.io/badge/Spring-Kotlin-blueviolet?style=plastic&logo=springboot)
 ![Frontend](https://img.shields.io/badge/React-Typescript-orange?style=plastic&logo=react)
-
+![Cloud](https://img.shields.io/badge/Netlify-Vite-red?style=plastic&logo=Netlify)
+![Cloud](https://img.shields.io/badge/Heroku-Graddle-blue?style=plastic&logo=Heroku)
 # Treinamento fullstack oferecido pelo canal DevSuperior do dia 11/07/22 a 17/07/22.
 
 
