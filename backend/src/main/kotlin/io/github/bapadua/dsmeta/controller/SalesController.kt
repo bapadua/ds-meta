@@ -11,7 +11,6 @@ import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
@@ -29,7 +28,7 @@ class SalesController(
 ) {
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
-    @PostMapping(path = ["/{id}/notification"])
+    @GetMapping(path = ["/{id}/notification"])
     fun notifySms(@PathVariable id: UUID): ResponseEntity<Void> {
         notificationService.notification(id)
         return ResponseEntity.ok().build()
