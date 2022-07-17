@@ -29,7 +29,9 @@ class SalesController(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     @GetMapping(path = ["/{id}/notification"])
-    fun notifySms(@PathVariable id: UUID): ResponseEntity<Void> {
+    fun notifySms(
+        @PathVariable id: UUID
+    ): ResponseEntity<Void> {
         notificationService.notification(id)
         return ResponseEntity.ok().build()
     }

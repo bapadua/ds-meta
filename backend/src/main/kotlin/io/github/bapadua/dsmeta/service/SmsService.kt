@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service
 class SmsService(
     private val loggingService: LoggingService,
 ) {
+    @Value("\${twilio.active}")
+    private var active: Boolean? = false
     @Value("\${twilio.sid}")
     private lateinit var twilioSid: String
     @Value("\${twilio.key}")
@@ -24,11 +26,15 @@ class SmsService(
     private val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     fun sendSms(message: String) {
-        Twilio.init(twilioSid, twilioKey)
-        val from = PhoneNumber(twilioPhoneFrom)
-        val to = PhoneNumber(twilioPhoneTo)
-        val result = Message.creator(to, from, message).create()
-        loggingService.logInfo(logger, "message sent to ${twilioPhoneTo}: sid: ${result.sid}")
+        if(active == true) {
+            Twilio.init(twilioSid, twilioKey)
+            val from = PhoneNumber(twilioPhoneFrom)
+            val to = PhoneNumber(twilioPhoneTo)
+            val result = Message.creator(to, from, message).create()
+            loggingService.logInfo(logger, "message sent to ${twilioPhoneTo}: sid: ${result.sid}")
+        } else
+            loggingService.logInfo(logger, "fake message sent to $twilioPhoneTo")
+
     }
 
 }
